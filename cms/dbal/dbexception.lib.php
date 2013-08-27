@@ -11,11 +11,16 @@ class DatabaseException extends Exception
 {
     
     public function __construct($message, $code = 0, Exception $previous = null) {
-        // some code
+        // Need to add default messages
         parent::__construct($message, $code, $previous);
     }
 
-    // custom string representation of object , need to cms integration to it.
+    /**
+     * This is incomplete
+     * This function returns the error code and message 
+     * @param nothing
+     * @return string representation of error code and messages -> need to change this
+     */
     public function getMessage() {
         return __CLASS__ . ": [{$this->code}]: {$this->message}\n";
     }

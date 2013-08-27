@@ -1,11 +1,11 @@
 <?php 
-if(!defined('__PRAGYAN_CMS'))
+/*if(!defined('__PRAGYAN_CMS'))
 { 
 	header($_SERVER['SERVER_PROTOCOL'].' 403 Forbidden');
 	echo "<h1>403 Forbidden</h1><h4>You are not authorized to access the page.</h4>";
 	echo '<hr/>'.$_SERVER['SERVER_SIGNATURE'];
 	exit(1);
-}
+}*/
 /**
  * @package pragyan
  * @author mythreya Raj
@@ -13,6 +13,7 @@ if(!defined('__PRAGYAN_CMS'))
  * @license http://www.gnu.org/licenses/ GNU Public License
  * For more details, see README
  */
+	require_once("dbexception.lib.php");
 	class Database
 	{
 	    public $link;
@@ -27,7 +28,7 @@ if(!defined('__PRAGYAN_CMS'))
 	    private function __construct() {} 
 	    
 	    /**
-	     * This function Connects to database, need to debate of PDOs or not
+	     * This function Connects to database, Using PDOs
 	     * @param nothing
 	     * @return the database connection object.
 	     */
