@@ -21,7 +21,7 @@ class DatabaseException extends Exception
      * @param nothing
      * @return string representation of error code and messages -> need to change this
      */
-    public function getMessage() {
+    public function getErrorMessage() {
         return __CLASS__ . ": [{$this->code}]: {$this->message}\n";
     }
 

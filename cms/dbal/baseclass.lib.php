@@ -34,10 +34,11 @@
 	     */
 	    protected function connect(){              
             try{
-                    return $conn_str = new PDO($this->dbtype.":host=".$this->dbhost.";dbname=".$this->dbname, $this->dbuser,$this->dbpass);
+            	//echo $this->dbtype.":host=".$this->dbhost.";dbname=".$this->dbname, $this->dbuser,$this->dbpass;
+                return $conn_str = new PDO("{$this->dbtype}:host={$this->dbhost};dbname={$this->dbname}", $this->dbuser,$this->dbpass);
             }
             catch(DatabaseException $e){
-                echo $e->getMessage();
+                echo $e->getErrorMessage();
             }       
 	    }
 	    
